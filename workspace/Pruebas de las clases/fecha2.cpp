@@ -64,6 +64,10 @@ int main(){
     Fecha ayer;
     Fecha otro(5);
 
+    cout<<"mira bruno un 17............"<<hoy.getDia()<<endl;
+    hoy.setDia(24);
+    cout<<"mira bruno un otro dia............"<<hoy.getDia()<<endl;
+
     hoy.Mostrar();
     ayer.Mostrar();
     otro.Mostrar();

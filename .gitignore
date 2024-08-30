@@ -15,6 +15,7 @@ build/
 bin/
 obj/
 Temas/
+Auxiliares/
 
 # Ignorar archivos de configuración de IDE
 *.code-workspace
