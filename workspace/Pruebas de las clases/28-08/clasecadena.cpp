@@ -3,10 +3,8 @@
 ///Fecha:
 ///Comentario:
 
-# include <iostream>
-# include <cstring>
-# include <locale>
-# include <ctype.h>
+# include<iostream>
+# include<cstring>
 
 using namespace std;
 
@@ -24,9 +22,6 @@ class Cadena {
             p[tam-1]='\0';
             }
         ///set?
-            setTam(dimesion) {
-                tam=dimesion;
-            }
 
         ///gets
         char *getP() {
@@ -40,24 +35,8 @@ class Cadena {
             }
         ////metodo
 
-        void aMayusculas() {
+        void *aMayusculas() {
             strupr(p);
-            }
-        void aMinusculas() {
-            strlwr(p);
-            }
-
-        void letraCapital() {
-            int i;
-            char ejemplo;
-            for(i=0; i<tam; i++) {
-                if(p[i]=='.') {
-
-                    ejemplo=toupper(p[i+1]);
-                    p[i+1]=ejemplo;
-
-                    }
-                }
             }
 
         ~Cadena() { ///devolvemos la memoria en el destructor
@@ -68,25 +47,13 @@ class Cadena {
 ///hacer un método aMayusculas() que ponga a todos los caracteres de tipo letra en mayúsculas
 ///hacer un método aMinusculas() que ponga a todos los caracteres de tipo letra en minúsculas
 ///hacer un método primeraMayuscula() que ponga al primer caracter de tipo letra en mayúsculas
-///Hacer un método para poner mayúscula luego de un punto.
 
 int main() {
-    setlocale(LC_ALL,"");
-    Cadena palabra("Prueba CON .brUno.chau bruno");
-    palabra.Mostrar();
-    cout<<"Mayusculas"<<endl;
+    Cadena palabra("HOLA A TODOS/AS LOS/LAS QUE ME CONOCEN!");
+
     palabra.aMayusculas();
-    palabra.Mostrar();
-
-    cout<<"Minusculas"<<endl;
-    palabra.aMinusculas();
-    palabra.Mostrar();
-
-    cout<<"Letra cap"<<endl;
-    palabra.letraCapital();
-    palabra.Mostrar();
-
     /*cout<<palabra.getP()<<endl;
+    palabra.Mostrar();
     cout<<endl;
 
     cout<<"TAMANIO "<<palabra.getTam();*/
@@ -94,7 +61,7 @@ int main() {
     cout<<"ASCII de z "<<(int)'z'<<endl;
 
     cout<<"ASCII de A "<<(int)'A'<<endl;
-    cout<<"ASCII de . "<<(int)'.'<<endl;*/
+    cout<<"ASCII de Z "<<(int)'Z'<<endl;*/
     cout<<endl;
     system("pause");
     return 0;

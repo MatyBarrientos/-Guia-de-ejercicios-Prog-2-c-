@@ -10,17 +10,17 @@ using namespace std;
 ///POO (OOP) es una forma de entender la programacion -paradigma-
 /// distinta de la programación estructurada
 
-class Fecha{
+class Fecha {
     private:///sólo es accesible dentro de la clase
         int dia, mes, anio;///propiedades->variables de la clase
     public:///puede ser accedido tanto dentro como fuera de la clase
-         Fecha(int d=0, int m=0, int a=0){
+        Fecha(int d=0, int m=0, int a=0) {
             dia=d;
             mes=m;
             anio=a;
-         }
+            }
 
-         void Cargar(){ ///métodos o funciones de la clase
+        void Cargar() { ///métodos o funciones de la clase
             int d;
             cout<<"DIA ";
             cin>>d;
@@ -29,49 +29,65 @@ class Fecha{
             cin>>mes;
             cout<<"ANIO ";
             cin>>anio;
-         }
-         void Mostrar();
+            }
+        void Mostrar();
         ///setter
-         void setDia(int dia){
-             if(dia>=1 &&dia<=31)this->dia=dia;
-             else this->dia=0;
-             }
-        void setMes(int m){mes=m;}
-        void setAnio(int a){anio=a;}
+        void setDia(int dia) {
+            if(dia>=1 &&dia<=31)this->dia=dia;
+            else this->dia=0;
+            }
+        void setMes(int m) {
+            mes=m;
+            }
+        void setAnio(int a) {
+            anio=a;
+            }
         ///getter
-        int getDia(){return dia;}
-        int getMes(){return mes;}
-        int getAnio(){return anio;}
+        int getDia() {
+            return dia;
+            }
+        int getMes() {
+            return mes;
+            }
+        int getAnio() {
+            return anio;
+            }
 
-        void MostrarDireccion(){
+        void MostrarDireccion() {
             cout<<"QUE ES this? "<<this<<endl;
             cout<<"PUNTERO OCULTO QUE CONTIENE LA DIRECCION DEL OBJETO QUE LLAMA AL METODO"<<endl;
 
-        }
+            }
         ///DESTRUCTOR
-        ~Fecha(){
+        ~Fecha() {
             cout<<"SE MURIO EL OBJETO!! VIVA EL OBJETO!!!"<<endl;
+            }
+    };
+
+void Fecha::Mostrar() {
+    cout<<this->dia<<"/"<<mes<<"/"<<anio<<endl;
+    }
+
+
+int main() {
+    //Fecha hoy(17,8,2024);
+    int i,j;
+    Fecha vecFechas[5];
+    for (i=0; i<3; i++) {
+        vecFechas[i].Cargar();
         }
-};
-
-void Fecha::Mostrar(){
-        cout<<this->dia<<"/"<<mes<<"/"<<anio<<endl;
-}
-
-
-int main(){
-    Fecha hoy(17,8,2024);
-    Fecha ayer;
+    for (j=0; i<3; i++) {
+        vecFechas[j].Mostrar();
+        system("pause");
+        }
+    /**Fecha ayer;
     Fecha otro(5);
-
-    cout<<"mira bruno un 17............"<<hoy.getDia()<<endl;
-    hoy.setDia(24);
-    cout<<"mira bruno un otro dia............"<<hoy.getDia()<<endl;
 
     hoy.Mostrar();
     ayer.Mostrar();
-    otro.Mostrar();
-	system("pause");
-	return 0;
-}
+    otro.Mostrar();*/
+
+    system("pause");
+    return 0;
+    }
 

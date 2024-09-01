@@ -74,15 +74,9 @@ int cantRepetidos(int *v, int tam) {
     int i,j=1,cantidad=0;
 
     for(i=0; i<tam-1; i++) {
-        if(i==0) {
-            if(v[i]==v[j]) {
-                cantidad++;
-                }
-            }
-        else if((v[i]==v[j]) and (v[i-1]!=v[i])) {
+        if((v[i]==v[i+1]) && ((i==0) || (v[i-1]!=v[i]))) {
             cantidad++;
             }
-        j++;//la 'j' la puse para hacerlo más legible al código, se podría hacer simplemente jugando con 'i'.
         }
     return cantidad;
     }
