@@ -34,9 +34,7 @@ int main() {
     repetidos=cantRepetidos(vEntero,tam);
 
     cout<<"Cantidad de repetidos: "<<repetidos<<endl;
-
-
-
+    delete []vEntero;
 
     return 0;
     }
