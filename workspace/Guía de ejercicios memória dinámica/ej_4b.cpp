@@ -4,14 +4,15 @@
 using namespace std;
 
 /**
-Hacer una función que reciba un vector de enteros y su tamaño y devuelva la
-cantidad de números distintos que se repiten en el vector.
+Hacer una funciÃ³n que reciba un vector de enteros y su tamaÃ±o y devuelva la
+cantidad de nÃºmeros distintos que se repiten en el vector.
 */
 
 void definirVector(int* &v, int &tam); //para crear un vector dinamico en una funcion hay que pasar un puntero por referencia
 void cargarVector(int *v, int tam);
 void mostarVector(int *v, int tam);
 int cantRepetidos(int *v, int tam);
+void ordenarVector(int *v, int tam);
 
 
 int main() {
@@ -22,6 +23,9 @@ int main() {
 
     definirVector(vEntero,tam);
     cargarVector(vEntero,tam);
+    mostarVector(vEntero,tam);
+    cout<<"Vector ordenado...."<<endl;
+    ordenarVector(vEntero,tam);
     mostarVector(vEntero,tam);
 
     repetidos=cantRepetidos(vEntero,tam);
@@ -35,11 +39,11 @@ int main() {
     }
 
 void definirVector(int* &v, int &tam) {
-    cout<<"Ingrese el tamaño del vector: ";
+    cout<<"Ingrese el tamaÃ±o del vector: ";
     cin>>tam;
     v=new int [tam];
     if (v==nullptr) {
-        cout<<"Error de asignación de Memoria"<<endl;
+        cout<<"Error de asignaciÃ³n de Memoria"<<endl;
         exit(-1);
         }
     else {
@@ -63,30 +67,40 @@ void mostarVector(int *v, int tam) {
         }
     cout<<endl;
     }
+
+
 int cantRepetidos(int *v, int tam) {
-    int cantidad = 0;
+    int i,/*j=1,*/cantidad=0;
 
-    for(int i = 0; i < tam - 1; i++) {
-        bool bandera = false;
-
-        // a verificar si ya lo conté
-        for(int k = 0; k < i; k++) {
-            if(v[i] == v[k]) {
-                bandera = true; //tengo ocurrencia
-                break; // hago un corte y salgo
-            }
-        }
-
-        if (!bandera) {
-            //si no lo conté anteriormente, arranco con fuerza
-            for(int j = i + 1; j < tam; j++) {
-                if(v[i] == v[j]) {
-                    cantidad++;
-                    break; // si encuentro una ocurrencia, lo corto (después de aumentar mi contador)
+    for(i=0; i<tam-1; i++) {
+        if(i==0) {
+            if(v[i]==v[i+1]) {
+                cantidad++;
                 }
             }
+        else if((v[i]==v[i+1]) and (v[i-1]!=v[i])) {
+            cantidad++;
+            }
+        //j++;
         }
+    return cantidad;
     }
 
-    return cantidad;
-}
+
+
+
+void ordenarVector(int *v, int tam) {
+    int i, j;
+    int aux, posMin;
+    for(i=0; i<tam-1; i++) {
+        posMin=i;
+        for(j=i+1; j<tam; j++) {
+            if(v[j]<v[posMin]) {
+                posMin=j;
+                }
+            }
+        aux=v[i];
+        v[i]=v[posMin];
+        v[posMin]=aux;
+        }
+    }
