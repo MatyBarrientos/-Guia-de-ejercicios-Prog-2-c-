@@ -8,7 +8,7 @@ Hacer una función que reciba un vector de enteros y su tamaño y devuelva la
 cantidad de números distintos que se repiten en el vector.
 */
 
-void definirVector(int* &v, int &tam); //para crear un vector dinamico en una funcion hay que pasar un puntero por referencia
+void definirVector(int* &v, int tam); //para crear un vector dinamico en una funcion hay que pasar un puntero por referencia
 void cargarVector(int *v, int tam);
 void mostarVector(int *v, int tam);
 int cantRepetidos(int *v, int tam);
@@ -19,7 +19,10 @@ int main() {
     setlocale(LC_ALL,"");
 
     int *vEntero=nullptr;
-    int tam=0, repetidos=0;
+    int tam, repetidos=0;
+
+    cout<<"Ingrese el tamaño del vector: ";
+    cin>>tam;
 
     definirVector(vEntero,tam);
     cargarVector(vEntero,tam);
@@ -38,9 +41,7 @@ int main() {
     return 0;
     }
 
-void definirVector(int* &v, int &tam) {
-    cout<<"Ingrese el tamaño del vector: ";
-    cin>>tam;
+void definirVector(int* &v, int tam) {
     v=new int [tam];
     if (v==nullptr) {
         cout<<"Error de asignación de Memoria"<<endl;
@@ -70,18 +71,18 @@ void mostarVector(int *v, int tam) {
 
 
 int cantRepetidos(int *v, int tam) {
-    int i,/*j=1,*/cantidad=0;
+    int i,j=1,cantidad=0;
 
     for(i=0; i<tam-1; i++) {
         if(i==0) {
-            if(v[i]==v[i+1]) {
+            if(v[i]==v[j]) {
                 cantidad++;
                 }
             }
-        else if((v[i]==v[i+1]) and (v[i-1]!=v[i])) {
+        else if((v[i]==v[j]) and (v[i-1]!=v[i])) {
             cantidad++;
             }
-        //j++;
+        j++;//la 'j' la puse para hacerlo más legible al código, se podría hacer simplemente jugando con 'i'.
         }
     return cantidad;
     }
