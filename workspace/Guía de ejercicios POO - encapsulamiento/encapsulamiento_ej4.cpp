@@ -95,35 +95,40 @@ class Triangulo {
             return getTipo()==3;
             }
 
+        ////No olvidar los destructores
+        ~Triangulo{
+          cout<<"el Triangulo ha sido destruido."<<endl;
+        }
+
     };
 
 
 int main() {
     //setlocale(LC_ALL,"");
-    Triangulo triangulito(3,8,3);
+    Triangulo tObj(3,8,3);
 
-    cout << "Mostramos el lado 1: "<<triangulito.getLado(1)<<endl;
-    cout <<"Mostramos el lado 2: "<<triangulito.getLado(2)<<endl;
-    cout <<"Mostramos el lado 3: "<<triangulito.getLado(3)<<endl;
+    cout << "Mostramos el lado 1: "<<tObj.getLado(1)<<endl;
+    cout <<"Mostramos el lado 2: "<<tObj.getLado(2)<<endl;
+    cout <<"Mostramos el lado 3: "<<tObj.getLado(3)<<endl;
 
     cout<<"Cambiamos el lado del lado 2"<<endl;
-    triangulito.setLado(2,9);
-    cout<<"Mostramos el nuevo lado 2: "<<triangulito.getLado(2)<<endl;
+    tObj.setLado(2,9);
+    cout<<"Mostramos el nuevo lado 2: "<<tObj.getLado(2)<<endl;
 
     cout<<"el tipo de triángulo es: ";
-    if(triangulito.getTipo()==1) {
+    if(tObj.getTipo()==1) {
         cout <<" equilátero"<<endl ;
         }
-    else if(triangulito.getTipo()==2) {
+    else if(tObj.getTipo()==2) {
         cout<<" isósceles"<<endl;
         }
     else {
         cout<<"escaleno"<<endl;
         }
 
-    cout<<"Es escaleno: "<<triangulito.isEscaleno()<<endl;
-    cout<<"Es isósceles: "<<triangulito.isIsosceles()<<endl;
-    cout<<"Es equilátero: "<<triangulito.isEquilatero()<<endl;
+    cout<<"Es escaleno: "<<tObj.isEscaleno()<<endl;
+    cout<<"Es isósceles: "<<tObj.isIsosceles()<<endl;
+    cout<<"Es equilátero: "<<tObj.isEquilatero()<<endl;
 
     return 0;
     }
