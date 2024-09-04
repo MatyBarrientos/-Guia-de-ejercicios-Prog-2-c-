@@ -96,7 +96,7 @@ class Triangulo {
             }
 
         ////No olvidar los destructores
-        ~Triangulo{
+        ~Triangulo(){
           cout<<"el Triangulo ha sido destruido."<<endl;
         }
 
