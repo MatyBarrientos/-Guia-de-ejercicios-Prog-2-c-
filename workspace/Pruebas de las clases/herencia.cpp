@@ -1,6 +1,5 @@
 
-# include<iostream>
-#include<locale>
+#include<iostream>
 
 using namespace std;
 
@@ -53,9 +52,7 @@ class Fecha {
 
             }
         ///DESTRUCTOR
-        ~Fecha() {
-            cout<<"SE MURIO EL OBJETO!! VIVA EL OBJETO!!!"<<endl;
-            }
+        ~Fecha() {}
     };
 
 void Fecha::Mostrar() {
@@ -78,8 +75,6 @@ void Fecha::Mostrar() {
   	char* getApellido(){return apellido;}
   	int getTelefono(){return telefono;}
   	char* getMail(){return mail;}
-
-
   };
 
   void Persona::Cargar(){
@@ -123,13 +118,24 @@ public:
 		fechaInscripcion.Mostrar();
 	}
 };
-
+class AlumnoGrado:Alumno{
+private:
+public:
+},
+class AlumnoTecnicatura:Alumno{
+private:
+public:
+},
+class AlumnoExtra:Alumno{
+private:
+public:
+},
 class Docente:Persona{
 	private:
 	int legajoDocente;
 	char cargo[30];
 	Fecha fechaIngreso;
-public:
+    public:
 	void Cargar(){
 		Persona::Cargar();
 		cout<<"Nro de Legajo docente: ";
@@ -137,7 +143,7 @@ public:
 		cout<<"Ingrese cargo: ";
 		cin.ignore();
 		cin.getline(cargo,30);
-		cout<<"Fecha de Ingreso: ";
+		cout<<"Fecha de Ingreso. "<<endl;
 		fechaIngreso.Cargar();
 	}
 	void Mostrar(){
@@ -146,8 +152,8 @@ public:
 		cout<<"Cargo: "<<cargo<<endl;
 		cout<<"Fecha de Ingreso: ";
 		fechaIngreso.Mostrar();
+    cout<<getMail()<<endl;
 	}
-
 };
 
 class Administrativo:Persona{
@@ -161,12 +167,21 @@ public:
     ///setters
 
 };
+class AdministrativoPlanta:Administrativo{
+private:
+public:
+};
+class AdministrativoContratado:Administrativo{
+private:
+public:
+};
 
+class Graduado:Persona{
 
-
+};
 
  int main(){
- 	setlocale(LC_ALL,"");
+//setlocale(LC_ALL,"");
  	/*Persona obj;
 
  	obj.Cargar();
