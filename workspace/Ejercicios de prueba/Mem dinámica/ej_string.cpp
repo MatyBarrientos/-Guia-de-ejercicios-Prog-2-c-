@@ -17,7 +17,7 @@ int main(){
 	if(pS==nullptr){
 		return 1;
 	}else{
-		cout<<"Todo Ok por le momento."<<endl;
+		cout<<"Todo Ok por el momento."<<endl;
 	}
 	cin.ignore();
 

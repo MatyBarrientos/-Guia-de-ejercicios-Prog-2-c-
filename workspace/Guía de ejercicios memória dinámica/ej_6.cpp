@@ -15,8 +15,7 @@ int* copiarPares(int *v, int tam);
 int cantParesNoreps(int *v, int tam);
 
 using namespace std;
-int main()
-{
+int main() {
     setlocale(LC_ALL, "");
 
     int *vPares = nullptr;
@@ -31,7 +30,7 @@ int main()
     ordenarVectorAsc(vecEnteros, TAM);
     cout << "Muestro el vector ordenado" << endl;
     mostarVector(vecEnteros, TAM);
-    
+
 
     cout << "----------------------------------" << endl;
 
@@ -47,51 +46,40 @@ int main()
     return 0;
 }
 
-void definirVector(int *&v, int tam)
-{
+void definirVector(int *&v, int tam) {
     v = new int[tam];
-    if (v == nullptr)
-    {
+    if (v == nullptr) {
         cout << "Error de asignación de Memoria" << endl;
         exit(1);
-    }
-    else
-    {
+    } else {
         cout << "Vector creado correctamente." << endl;
     }
 }
 
-void cargarVector(int *v, int tam)
-{
+void cargarVector(int *v, int tam) {
     int i;
-    for (i = 0; i < tam; i++)
-    {
+    for (i = 0; i < tam; i++) {
         cout << "Ingrese el valor " << i + 1 << ": ";
         cin >> v[i];
     }
 }
 
-void mostarVector(int *v, int tam)
-{
+void mostarVector(int *v, int tam) {
     int i;
-    for (i = 0; i < tam; i++)
-    {
+    for (i = 0; i < tam; i++) {
         cout<< "[" << v[i] << "] ";
     }
     cout << endl;
 }
 
-int* copiarPares(int *v, int tam)
-{
+int* copiarPares(int *v, int tam) {
 
     int *vP = nullptr;
     definirVector(vP, cantParesNoreps(v, tam));
 
     int i, j = 0;
-    for (i = 0; i < tam; i++)
-    {
-        if (v[i] % 2 == 0 && (i == 0 || v[i - 1] != v[i]))
-        {
+    for (i = 0; i < tam; i++) {
+        if (v[i] % 2 == 0 && (i == 0 || v[i - 1] != v[i])) {
             vP[j] = v[i];
             j++;
         }
@@ -99,17 +87,14 @@ int* copiarPares(int *v, int tam)
     return vP;
 }
 
-void ordenarVectorAsc(int *v, int tam)
-{
+void ordenarVectorAsc(int *v, int tam) {
     int i, j;
     int aux, posMin;
-    for (i = 0; i < tam - 1; i++)
-    {
-      posMin = i;
-        for (j = i + 1; j < tam; j++)
-        {
-            if (v[j] < v[posMin]){
-              posMin = j;
+    for (i = 0; i < tam - 1; i++) {
+        posMin = i;
+        for (j = i + 1; j < tam; j++) {
+            if (v[j] < v[posMin]) {
+                posMin = j;
             }
         }
         aux = v[i];
@@ -118,14 +103,11 @@ void ordenarVectorAsc(int *v, int tam)
     }
 }
 
-int cantParesNoreps(int *v, int tam)
-{
+int cantParesNoreps(int *v, int tam) {
     int i, cantidad = 0;
     // solo funciona con vectores ordenados.
-    for (i = 0; i < tam; i++)
-    {
-        if (v[i] % 2 == 0 && (i == 0 || v[i - 1] != v[i]))
-        {
+    for (i = 0; i < tam; i++) {
+        if (v[i] % 2 == 0 && (i == 0 || v[i - 1] != v[i])) {
             cantidad++;
         }
     }

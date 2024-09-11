@@ -20,6 +20,6 @@ Auxiliares/
 # Ignorar archivos de configuración de IDE
 *.code-workspace
 .vscode/
-*.cbp
+# *.cbp
 *.depend
 *.layout

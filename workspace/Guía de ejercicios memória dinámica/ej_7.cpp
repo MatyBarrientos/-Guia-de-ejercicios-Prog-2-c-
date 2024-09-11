@@ -42,13 +42,6 @@ int main() {
     mostarVector(vMin,tam);
 
 
-
-
-
-
-
-
-
     delete []vEntero;
     delete []vChar;
     delete []vMin;
