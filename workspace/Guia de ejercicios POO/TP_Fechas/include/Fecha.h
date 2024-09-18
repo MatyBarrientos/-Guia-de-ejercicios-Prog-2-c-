@@ -26,7 +26,7 @@ class Fecha
         int getMes();
         int getAnio();
 
-        ///Funciones de ayuda
+        ///Metodos de ayuda
         bool esBiciesto(int anio);
         bool fechaValida(int d,int m,int a);
         ///

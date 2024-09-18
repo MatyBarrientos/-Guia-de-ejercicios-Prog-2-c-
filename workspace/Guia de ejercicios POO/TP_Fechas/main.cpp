@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Fecha.h"
-
+#include "funciones.h"
 using namespace std;
 
 int main()
@@ -21,6 +21,8 @@ int main()
     fObj.mostrarFecha();
     fObj.RestarDia();
     fObj.mostrarFecha();
+    cout<<"----------------------------"<<endl;
+    mostrarDia(fObj);
 
     /*fObj.setAnio(2012);
     fObj.setDia(33);
