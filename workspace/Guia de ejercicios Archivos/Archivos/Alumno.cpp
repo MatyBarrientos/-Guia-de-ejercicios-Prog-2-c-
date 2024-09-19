@@ -33,3 +33,11 @@ void Alumno::Mostrar()
     cout<<"CARRERA ";
     cout<<codigoCarrera<<endl;
 }
+int Alumno::getLegajo()
+{
+    return legajo;
+}
+void Alumno::setLegajo(int l)
+{
+    legajo=l;
+}

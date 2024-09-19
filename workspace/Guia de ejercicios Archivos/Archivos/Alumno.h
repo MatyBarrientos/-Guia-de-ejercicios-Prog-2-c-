@@ -12,4 +12,6 @@ private:
 public:
     void Cargar();
     void Mostrar();
+    int getLegajo();
+    void setLegajo(int l);
 };

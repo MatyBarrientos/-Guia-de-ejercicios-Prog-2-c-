@@ -4,7 +4,9 @@
 
 void mostrarMenu();
 void menu(Alumno obj);
-/*void menu();*/
 bool grabarRegistroAlumno(Alumno reg);
 bool leerRegistroAlumno(Alumno &reg);
 bool leerRegistroAlumno2();
+
+int buscarLegajo(int leg);
+Alumno devolverRegistro(int posReg);
